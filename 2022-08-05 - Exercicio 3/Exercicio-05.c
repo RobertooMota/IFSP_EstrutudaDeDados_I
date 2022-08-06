@@ -99,18 +99,74 @@ de um quadrado e retorne o valor de sua área.
 void ex02()
 {
     int aresta;
-    printf("Informe o tamanho da aresta do quadrado: ");
+    printf("Informe o tamanho da aresta do quadrado (mm): ");
+    scanf("%d", &aresta);
+    printf("A Area do seu quadrado e de:\n");
+    printf("\n\n\n|   %d mm^2   |\n\n\n", aresta * aresta);
+    sleep(4);
+}
 
+// ****************** Exercicio 3 ******************
+/*
+Escreva uma função que receba um número
+inteiro positivo N por parâmetro e retorne a
+soma dos N primeiros inteiros positivos.
+*/
+int ex03_aux(int num)
+{
+    int resultado = 0, index;
+    for (index = 0; index <= num; index++)
+    {
+        if (!(index % 2))
+        {
+            resultado += index;
+        }
+    }
+    return resultado;
 }
 
 void ex03()
 {
+    int num;
+    printf("\nDigite um numero inteiro positivo: ");
+    scanf("%d", &num);
+    printf("\n\n\nA soma dos numeros pares de 0 ate %d e de: %d\n\n\n\n\n", num, ex03_aux(num));
+    sleep(4);
+}
+
+// ****************** Exercicio 4 ******************
+/*
+Faça uma função que recebe um número N que, caso
+seja positivo, calcule e exiba todos múltiplos de 5 entre
+0 e N
+*/
+void ex04_aux(int num)
+{
+    if (num < 5)
+    {
+        printf("Nenhum numero multiplo de 5 entre 0 e %d", num);
+    }
+    else
+    {
+        int index;
+        printf("\n\nMultiplos de 5: \n");
+        for (index = 5; index < num; index++)
+            if (index % 5 == 0)
+                printf("%d ", index);
+    }
+    printf("\n\n\n");
+    sleep(4);
 }
 
 void ex04()
 {
+    int num;
+    printf("\n\nDigite um numero: ");
+    scanf("%d", &num);
+    ex04_aux(num);
 }
 
+// ****************** Sair do Sistema ******************
 int sairDoSistema(void)
 {
     printf("\n\n\n\n\nObrigado por usar nosso sistema!\n");
