@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 
 // ****************** Prototipagem de funções ******************
 int sairDoSistema();
@@ -28,7 +29,6 @@ int main(void)
         scanf("%d", &opcaoUsuario);
         (opcaoUsuario == 5) ? continuar = sairDoSistema() : trataEscolha(opcaoUsuario);
     }
-
     return 0;
 }
 
@@ -54,7 +54,8 @@ void trataEscolha(int opcao)
         ex04();
         break;
     default:
-        printf("Valor de entrada incorreto!");
+        printf("\n\n\n\nValor de entrada incorreto!\n\n\n\n");
+        sleep(3);
         break;
     }
 }
@@ -90,8 +91,16 @@ void ex01()
     printf("\n");
 }
 
+// ****************** Exercicio 2 ******************
+/*
+Escreva uma função que receba um dos lados
+de um quadrado e retorne o valor de sua área.
+*/
 void ex02()
 {
+    int aresta;
+    printf("Informe o tamanho da aresta do quadrado: ");
+
 }
 
 void ex03()
@@ -102,7 +111,8 @@ void ex04()
 {
 }
 
-int sairDoSistema(void){
+int sairDoSistema(void)
+{
     printf("\n\n\n\n\nObrigado por usar nosso sistema!\n");
     printf("Saindo!\n\n\n\n");
     return 0;
