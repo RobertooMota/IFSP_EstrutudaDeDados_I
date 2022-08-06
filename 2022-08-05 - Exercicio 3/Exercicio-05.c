@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 // ****************** Prototipagem de funções ******************
+int sairDoSistema();
 void trataEscolha(int);
 void ex01();
 void ex02();
@@ -11,9 +12,10 @@ void ex04();
 // ****************** Função principal (main) ******************
 int main(void)
 {
-    int opcaoUsuario, continuar = 1;
+    int opcaoUsuario;
+    int continuar = 1;
 
-    while (continuar)
+    while (continuar == 1)
     {
         printf("---------------------------\n");
         printf("1: Primos ate N\n");
@@ -24,7 +26,7 @@ int main(void)
         printf("---------------------------\n");
         printf("Sua opcao: ");
         scanf("%d", &opcaoUsuario);
-        trataEscolha(opcaoUsuario);
+        (opcaoUsuario == 5) ? continuar = sairDoSistema() : trataEscolha(opcaoUsuario);
     }
 
     return 0;
@@ -98,4 +100,10 @@ void ex03()
 
 void ex04()
 {
+}
+
+int sairDoSistema(void){
+    printf("\n\n\n\n\nObrigado por usar nosso sistema!\n");
+    printf("Saindo!\n\n\n\n");
+    return 0;
 }
