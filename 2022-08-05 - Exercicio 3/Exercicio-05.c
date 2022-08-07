@@ -88,6 +88,11 @@ void ex01()
                 printf("%d ", index);
         }
     }
+    else
+    {
+        printf("Somente permitido numeros positivos!");
+    }
+
     printf("\n");
 }
 
@@ -101,9 +106,16 @@ void ex02()
     int aresta;
     printf("Informe o tamanho da aresta do quadrado (mm): ");
     scanf("%d", &aresta);
-    printf("A Area do seu quadrado e de:\n");
-    printf("\n\n\n|   %d mm^2   |\n\n\n", aresta * aresta);
-    sleep(4);
+    if (aresta > 0)
+    {
+        printf("A Area do seu quadrado e de:\n");
+        printf("\n\n\n|   %d mm^2   |\n\n\n", aresta * aresta);
+        sleep(4);
+    }
+    else
+    {
+        printf("Nao e possivel uma aresta ter medida zero!");
+    }
 }
 
 // ****************** Exercicio 3 ******************
@@ -130,7 +142,7 @@ void ex03()
     int num;
     printf("\nDigite um numero inteiro positivo: ");
     scanf("%d", &num);
-    printf("\n\n\nA soma dos numeros pares de 0 ate %d e de: %d\n\n\n\n\n", num, ex03_aux(num));
+    (num > 0) ? printf("\n\n\nA soma dos numeros pares de 0 ate %d e de: %d\n\n\n\n\n", num, ex03_aux(num)) : printf("Somente permitido numeros positivos!");
     sleep(4);
 }
 
@@ -163,7 +175,7 @@ void ex04()
     int num;
     printf("\n\nDigite um numero: ");
     scanf("%d", &num);
-    ex04_aux(num);
+    (num > 0) ? ex04_aux(num) : printf("Permitido somente numeros positivos!");
 }
 
 // ****************** Sair do Sistema ******************
