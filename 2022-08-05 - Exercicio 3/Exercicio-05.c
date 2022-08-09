@@ -90,7 +90,7 @@ void ex01()
     }
     else
     {
-        printf("Somente permitido numeros positivos!");
+        printf("Somente permitido numeros positivos!\n");
     }
 
     printf("\n");
@@ -114,7 +114,7 @@ void ex02()
     }
     else
     {
-        printf("Nao e possivel uma aresta ter medida zero!");
+        printf("Nao e possivel uma aresta ter medida zero!\n");
     }
 }
 
@@ -142,7 +142,7 @@ void ex03()
     int num;
     printf("\nDigite um numero inteiro positivo: ");
     scanf("%d", &num);
-    (num > 0) ? printf("\n\n\nA soma dos numeros pares de 0 ate %d e de: %d\n\n\n\n\n", num, ex03_aux(num)) : printf("Somente permitido numeros positivos!");
+    (num > 0) ? printf("\n\n\nA soma dos numeros pares de 0 ate %d e de: %d\n\n\n\n\n", num, ex03_aux(num)) : printf("Somente permitido numeros positivos!\n");
     sleep(4);
 }
 
@@ -175,7 +175,7 @@ void ex04()
     int num;
     printf("\n\nDigite um numero: ");
     scanf("%d", &num);
-    (num > 0) ? ex04_aux(num) : printf("Permitido somente numeros positivos!");
+    (num > 0) ? ex04_aux(num) : printf("Permitido somente numeros positivos!\n");
 }
 
 // ****************** Sair do Sistema ******************
