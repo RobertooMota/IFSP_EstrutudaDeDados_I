@@ -2,23 +2,40 @@
 #include <stdio.h>
 #include <string.h>
 
-
-float resultado(char);
+float resultado(float, float, char);
 
 int main(void)
 {
-    char expressao[20];
-    printf("Digite a expressão sem espaços: ");
-    scanf("%s", expressao);
-    printf("Expressão digitada: %s", expressao);
-    printf("%s",strlen(expressao));
+    float val1, val2;
+    char operacao;
+    printf("Digite o valor 1: ");
+    scanf("%f", &val1);
+    printf("Digite o valor 2: ");
+    scanf("%f", &val2);
+    printf("Digite a operacao: ");
+    scanf("%s", &operacao);
+    printf("Valor 1: %f  Valor 2: %f  Operacao: %c\n", val1, val2, operacao);
+    (operacao == "*" || operacao == "/" || operacao == "+" || operacao == "-") ? printf("Resultado da operacao: %f", resultado(val1, val2, operacao)) : printf("Operacao nÃ£o reconhecida!");
 
     return 0;
 }
 
-float resultado(char expressao)
+float resultado(float val1, float val2, char operacao)
 {
-    float resultado;
-
-    return resultado;
+    if (operacao == "*")
+    {
+        return val1 * val2;
+    }
+    else if (operacao == "/")
+    {
+        return val1 / val2;
+    }
+    else if (operacao == "+")
+    {
+        return val1 + val2;
+    }
+    else if (operacao == "-")
+    {
+        return val1 - val2;
+    }
 }
