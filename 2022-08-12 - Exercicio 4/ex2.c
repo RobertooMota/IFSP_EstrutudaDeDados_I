@@ -4,7 +4,7 @@
 #include <ctype.h>
 
 int check(char *dado, int tipo); // tipo 1 nome tipo 2 nota
-int checkMaior(char *nome, char *nota);
+int checkMaior(char *nome, float nota);
 
 int main(int argc, char *argv[])
 {
@@ -24,9 +24,19 @@ int main(int argc, char *argv[])
                 //...........
                 if (statusNome && statusNota)
                 {
-                    checkMaior(argv[index - 1], argv[index]);
+                    if (checkMaior(argv[index - 1], atof(argv[index])))
+                    {
+                        strcpy(melhorAluno, argv[index - 1]);
+                        maiorNota = atof(argv[index]);
+                        statusNome = 0;
+                        statusNota = 0;
+                    }
                 }
-
+                else if (!statusNome || !statusNota)
+                {
+                    printf("\n\nFalha na verificacao! Confira os valores indicados\n\n");
+                    return 0;
+                }
                 //...........
             }
             else
@@ -41,7 +51,7 @@ int main(int argc, char *argv[])
     }
 
     // Status 1 = tudo OK Status 2 = Falha na verificação
-    // printf("\nstatus nota: %d\nstatus nome: %d\n", statusNota, statusNome); //<<<<---- Descomentar para debugar
+    printf("\nstatus nota: %d\nstatus nome: %d\n", statusNota, statusNome); //<<<<---- Descomentar para debugar
     return 0;
 }
 
@@ -77,7 +87,7 @@ int check(char *dado, int tipo)
     }
 }
 
-int checkMaior(char *nome, char *nota)
+int checkMaior(char *nome, float nota)
 {
     return 1;
 }
