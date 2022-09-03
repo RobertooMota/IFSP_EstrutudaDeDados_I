@@ -2,7 +2,7 @@
 Faça uma função recursiva que receba
 um número inteiro positivo N e imprima
 todos os números naturais de 0 até N em
-ordem crescente
+ordem DEcrescente
 */
 
 #include <stdlib.h>
@@ -12,8 +12,8 @@ void imprime(int num)
 {
     if (num < 0)
         return 0;
-    imprime(num - 1);
     printf("%d", num);
+    imprime(num - 1);
 }
 
 int main(void)
