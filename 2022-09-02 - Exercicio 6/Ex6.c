@@ -12,7 +12,6 @@ void func(int *vetor, int buffer)
 {
     if (buffer == 0)
         return 0;
-    // printf("%d ", vetor[buffer - 1]); Descomente aqui e comente linha 17 para inverter a ordem
     func(vetor, buffer - 1);
     printf("%d ", vetor[buffer - 1]);
 }
