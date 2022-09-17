@@ -38,8 +38,7 @@ Logo:
 Da mesma forma iremos ver no código que nós *"criamos"* um tipo de variável chamada **Carro** e depois criamos a variável propriamente dita **"Gol"** que é do tipo **Carro**
 
 ### fluxo:
-
-![Faceta](C:\Users\Roberto\Desktop\Faceta.jpg)
+![struct1](https://user-images.githubusercontent.com/69205774/190876178-67fd3600-6b8d-4cca-8600-6315696f17c8.jpg)
 
 Para acessar ou inserir algum valor usamos a seguinte sintaxe:
 
@@ -81,7 +80,7 @@ Agora temos um vetor com 10 posições e em cada posição tem uma struct com to
 
 ### Fluxo:
 
-![Faceta2](C:\Users\Roberto\Desktop\Faceta2.jpg)
+![struct2](https://user-images.githubusercontent.com/69205774/190876180-e73b5f43-4e69-4150-bb74-ef4a9beaf4ea.jpg)
 
 
 
