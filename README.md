@@ -1,4 +1,5 @@
-# Fala Fácil: Struct
+
+# Aula 7: Struct
 
 Exercício proposto dia: 14-09-2022
 
@@ -87,4 +88,3 @@ Agora temos um vetor com 10 posições e em cada posição tem uma struct com to
 Para acessar ou inserir algum valor usamos a seguinte sintaxe:
 
 `carros[POSICAO DESEJADA].ATRIBUTO`
-
