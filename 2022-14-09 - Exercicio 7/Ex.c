@@ -27,8 +27,8 @@ typedef struct
 
 //
 // ****************** Prototipagem de funções ******************
-void trataEscolha(int);
-void cadastrarNovo();
+void trataEscolha(int, Aluno *, int);
+void cadastrarNovo(Aluno *, int);
 void listarTodos();
 void buscarAlunoRA();
 void exibirMaiormedia();
@@ -36,19 +36,20 @@ void exibirMediaDasMedias();
 void excluirAlunoRA();
 int sairDoSistema();
 
-Aluno resetStruct(Aluno, int);
+void resetStruct(Aluno *, int);
+int localVago(Aluno *, int);
 
 // ****************** Função principal (main) ******************
 int main(void)
 {
-
     // Declarando o vetor de struct
     const int buffer = 40;
     Aluno alunos[buffer];
     // Resetando o vetor de estruturas
-    int index;
-    for (index = 0; index < buffer; index++)
-        alunos[index] = resetStruct(alunos[index], index);
+    resetStruct(&alunos, buffer);
+    // int index;
+    // for (index = 0; index < buffer; index++)
+    //     printf("%d\n, ", alunos[index].RA);
 
     int opcaoUsuario;
     int continuar = 1;
@@ -66,18 +67,19 @@ int main(void)
         printf("---------------------------\n");
         printf("Sua opcao: ");
         scanf("%d", &opcaoUsuario);
-        (opcaoUsuario == 7) ? continuar = sairDoSistema() : trataEscolha(opcaoUsuario);
+        (opcaoUsuario == 7) ? continuar = sairDoSistema() : trataEscolha(opcaoUsuario, &alunos, buffer);
     }
+
     return 0;
 }
 
 // ****************** Função que trata a escolha do usuario ******************
-void trataEscolha(int escolha)
+void trataEscolha(int escolha, Aluno *vetor, int buffer)
 {
     switch (escolha)
     {
     case 1:
-        void cadastrarNovo();
+        cadastrarNovo(vetor, buffer);
         break;
     case 2:
 
@@ -104,15 +106,60 @@ void trataEscolha(int escolha)
     }
 }
 
-Aluno resetStruct(Aluno estrutura, int index)
+void resetStruct(Aluno *vetor, int buffer)
 {
-
-    estrutura.RA = -1;
-    printf("INDEX: %d   RA: %d\n", index, estrutura.RA);
-    return estrutura;
+    int index;
+    for (index = 0; index < buffer; index++)
+        vetor[index].RA = -1;
 }
 
 int sairDoSistema()
 {
     printf("\nFinalizando atividades...\n\n");
+}
+
+void cadastrarNovo(Aluno *vetor, int buffer)
+{
+    int indexVago;
+    indexVago = localVago(vetor, buffer);
+    printf("\nLocal vago: %d\n", indexVago);
+    // printf("VALOR de CADASTRO: %d", vetor[0].RA);
+    if (indexVago >= -1)
+    {
+        char nome[50], curso[50];
+        printf("Digite o RA: ");
+        scanf("%d", &vetor[indexVago].RA);
+
+        printf("Digite o nome: ");
+        scanf("%s", &nome);
+        strcpy(nome, vetor[indexVago].nome);
+
+        printf("Digite o curso: ");
+        scanf("%s", &curso);
+        strcpy(curso, vetor[indexVago].curso);
+
+        printf("Digite o as notas separadas por espaco: ");
+        scanf("%f%f%f%f", &vetor[indexVago].notas[0], &vetor[indexVago].notas[1], &vetor[indexVago].notas[2], &vetor[indexVago].notas[3]);
+
+        printf("Digite o ano de inicio: ");
+        scanf("%d", &vetor[indexVago].anoInicio);
+
+        printf("Digite a idade: ");
+        scanf("%d", &vetor[indexVago].idade);
+        
+        printf("RA cadastrado: %d", vetor[indexVago].RA);
+    }
+}
+
+int localVago(Aluno *vetor, int buffer)
+{
+    int index;
+    for (index = 0; index < buffer; index++)
+    {
+        printf("Index: %d   Local de teste: %d\n", index, vetor[index].RA);
+        if (vetor[index].RA > 0)
+            return index;
+        else
+            return -1;
+    }
 }
