@@ -68,6 +68,7 @@ int main(void)
         printf("Sua opcao: ");
         scanf("%d", &opcaoUsuario);
         (opcaoUsuario == 7) ? continuar = sairDoSistema() : trataEscolha(opcaoUsuario, &alunos, buffer);
+        printf("PASSOU while");
     }
 
     return 0;
@@ -80,30 +81,30 @@ void trataEscolha(int escolha, Aluno *vetor, int buffer)
     {
     case 1:
         cadastrarNovo(vetor, buffer);
+        printf("PASSOU switch");
         break;
-    case 2:
+        // case 2:
 
-        break;
-    case 3:
+        //     break;
+        // case 3:
 
-        break;
-    case 4:
+        //     break;
+        // case 4:
 
-        break;
-    case 5:
+        //     break;
+        // case 5:
 
-        break;
-    case 6:
+        //     break;
+        // case 6:
 
-        break;
+        //     break;
 
     case 7:
+        printf("PASSOU case 7");
         sairDoSistema();
         break;
-
-    default:
-        break;
     }
+    printf("siando trata escolha");
 }
 
 void resetStruct(Aluno *vetor, int buffer)
@@ -111,6 +112,7 @@ void resetStruct(Aluno *vetor, int buffer)
     int index;
     for (index = 0; index < buffer; index++)
         vetor[index].RA = -1;
+    printf("PASSOU RESET");
 }
 
 int sairDoSistema()
@@ -120,6 +122,7 @@ int sairDoSistema()
 
 void cadastrarNovo(Aluno *vetor, int buffer)
 {
+    printf("ENTROU CADASTRO");
     int indexVago;
     indexVago = localVago(vetor, buffer);
     printf("\nLocal vago: %d\n", indexVago);
@@ -146,9 +149,9 @@ void cadastrarNovo(Aluno *vetor, int buffer)
 
         printf("Digite a idade: ");
         scanf("%d", &vetor[indexVago].idade);
-        
-        printf("RA cadastrado: %d", vetor[indexVago].RA);
+        printf("TERMINOU CADASTRO");
     }
+    printf("SAINDO CADASTRO");
 }
 
 int localVago(Aluno *vetor, int buffer)
