@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef char String;
+
+void resetString(char *, int);
+
+int main(int argc, char *argv[])
+{
+    char M = 1000, D = 500, C = 100, L = 50, X = 10, V = 5, I = 1;
+    int maxString = 3;
+    String entrada[maxString];
+    resetString(&entrada, maxString);
+
+    printf("Digite o valor: ");
+    gets(entrada);
+    fflush(stdin);
+
+    return 0;
+}
+
+void resetString(char *vetor, int buffer)
+{
+    int index;
+    for (index = buffer - 1; index >= 0; index--)
+        vetor[index] = '0';
+}
